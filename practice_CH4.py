@@ -374,7 +374,6 @@ for i  in range(0,row) :
         print(y,end='')
       
     print()
-"""
 #<h>
 row = 5
 
@@ -384,3 +383,136 @@ for i in range(1,row + 1) :
     for y in range(row,row - i,-1) :
         print(y,end='')
     print()
+
+#<18>
+num = int(input("請輸入整數："))
+num_1 = list(str(num))
+num_1.reverse()
+
+for i in num_1 :
+    print(i,end='')    
+
+#<19>
+data = [[2, 4, 5], [5, 8, None], [10, 3, 4]]
+for i , group in enumerate(data,1) :
+    if None in group :
+        print(f"第{i}組：Incomplete data")
+    else:
+        print(f"第{i}組：總和為{sum(group)}")
+#<20>
+
+num = int(input("請輸入數字："))
+cout = 0
+orig_num = num
+while num < 0 :
+        num = -num
+while num > 0 :
+    num //= 10
+    cout += 1
+
+if orig_num < 0 :            
+    print(f"{orig_num}是{cout}位的負整數")
+elif orig_num >0 :
+    print(f"{orig_num}是{cout}位的正整數")
+
+#<21>
+#解法1
+num = str(input("請輸入數字："))
+new_num = num.replace(',','')
+num_2 = int(new_num)
+print(num_2*2)
+
+#解法2
+num = str(input("請輸入數字："))
+
+while ',' in num :
+    num = num.replace(',','',1)
+num_2 = int(num)
+print(num_2 * 2)
+
+#<22>
+num = int(input("請輸入數字："))
+cout = 0
+n = 1
+fac = []
+if num > 0 :
+        while n <= num :
+            if num % n == 0:
+                fac.append(n)
+                cout += 1  # 只有在確認是因數時，計數器才 +1
+            n += 1         # 每次迴圈結束前，要把 n 推進到下一個數字
+print(f"{num}的因數有{cout}個，分別為：{fac}")
+
+#<23>
+
+num = int(input("請輸入數字："))
+for i in range(2, num):
+    if num % i == 0:
+        print(f"{num}不是質數。")
+        break   # 1. 將 break 縮排到 if 裡面，找到因數才跳出
+else:
+    print(f"{num}是質數") # 2. 將 else 對齊 for，代表「迴圈沒被 break 打斷」才會執行
+
+#<24>
+string_1 = 'machine_learning'
+index = 0
+while index < len(string_1) :
+    char = string_1[index]
+    if not char.isalpha():
+        print(f"找到非英文字母了，是'{char}'")
+    index += 1                 # 2. 把 index += 1 退出來，確保每次迴圈都會執行到
+#<25>
+nums = []
+for i in range(1,11) :
+    if i % 3 !=  0 :
+        nums.append(i )
+
+# 用 str(nums) 轉成字串，再用 [1:-1] 切掉頭尾的括號
+print(f"不能被3整除的有:{str(nums)[1:-1]}")
+
+#<26>
+num = 1
+total = 0
+while True:
+    total += num
+    if total > 100:
+        break
+    num += 1
+print(num)
+
+#<27>
+#students = x
+# students <100
+#students / 3  = x...2
+#students / 5  = x...3
+#students / 7  = x...2
+
+for i in range(1,100):
+    if i % 3 == 2 and i % 5 == 3 and i % 7 == 2:
+        students = i
+        break
+print(f"學生人數為{students}個")
+#<28>
+students = [] 
+i = 1
+while True:
+    if i % 3 == 2 and i % 5 == 3 and i % 7 == 2:
+        students.append(i)
+        if len(students) == 3 :
+            break
+    i += 1
+print(f"{str(students)[1:-1]}")
+"""
+#<29>
+num = [47,89,12,-4,12,2,97]
+num_1 = []
+for i in num :
+    if i > 0 :
+        num_1.append(i)
+    else :
+       num_1.append(i)
+       break
+print(f"{str(num_1)[1:-1]}")
+
+    
+        
