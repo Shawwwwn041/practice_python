@@ -482,7 +482,7 @@ print(num)
 
 #<27>
 #students = x
-# students <100
+# students < 100
 #students / 3  = x...2
 #students / 5  = x...3
 #students / 7  = x...2
@@ -502,7 +502,7 @@ while True:
             break
     i += 1
 print(f"{str(students)[1:-1]}")
-"""
+
 #<29>
 num = [47,89,12,-4,12,2,97]
 num_1 = []
@@ -514,5 +514,108 @@ for i in num :
        break
 print(f"{str(num_1)[1:-1]}")
 
+#<30>
+password = str(input("請設定密碼。"))
+
+is_valid = True
+
+if  password.isalnum() == False :
+    print("密碼只能包含英文字母與數字")
+    is_valid = False
+
+if len(password) < 6 :
+    print("密碼長度至少要六個字元")
+    is_valid = False
+
+if is_valid :
+    print("密碼設定成功！")
+#<31>
+
+num_test = str(input("請輸入一串數字！"))
+
+
+if num_test.isdigit() ==False :
+    print("輸入的數包含不法字元。")
+    is_valid = False
+
+else :
+    print(f"你輸入的數字為：{num_test}！\n是個吉利的數字呢！")    
+
+#<32>       
+num = [8,11,98,23,47]
+cout = 0
+for i in num :
+    if i % 3 ==0 :
+        cout += 1
+if cout != 0 :
+    print("包含有可被3整除的數")
+else :
+    print("包含沒有可被3整除的數")
+
+#<33>
+lower_limit = 0
+upper_limit = 255
+num_list = input("請輸入數字")
+negative = 0
+# 先把逗號替換成空白，再進行分割
+list_split = num_list.replace(',', ' ').split()
+
+
+for i in list_split :
     
-        
+    if int(i) < lower_limit or int(i) > upper_limit:
+        negative += 1
+
+if negative > 0 :
+    print("最少有一個數不在[0,255]內")
+else :
+    print("輸入的數全在範圍之內")
+
+#<34>
+#<a>->建立一個1~10的平方所組成的串列
+
+nums_square = [i * i for i in range(1,11)]
+print(nums_square)
+
+#<b>->建立一個1~50之間，可以同時被3、4整除的串列
+#num_Divisible = []
+
+#for i in range(1,51) :
+#    if i % 3 == 0 and i % 4 == 0 :
+#        num_Divisible.append(i)
+
+num_Divisible = [i for i in range(1,51) if i % 3 == 0 and i % 4 == 0]
+print(num_Divisible)
+
+#<c>->取出字串"list comprehension"的所有母音，並組成一個字串串列
+string = "list comprehension"
+
+vowel = [char for char in string if char in "aeiou"]
+print(vowel)
+
+#<d>
+num = [3,-1,4,7,-3,2]
+
+new_num = [1 if number > 0 else -1 for number in num]
+print(new_num)
+
+
+
+#<36>->['state','University','of','New','york','at','buffalo']
+string_1 = ['state','University','of','New','york','at','buffalo']
+
+string_2 = [word for word in string_1 if 'a' in word]
+print(string_2)
+#<37>
+num1 = [1,2,3]
+num2 = [4,5]
+
+combination = [[n,m] for n in num1 for m in num2]
+print(combination)
+"""
+
+#<38>
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+new_matrix = [[n + 1 for n in row]for row in matrix]
+print(new_matrix)
