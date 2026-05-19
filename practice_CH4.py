@@ -3,7 +3,7 @@
 #<1>冷暖氣開關判斷
 #氣溫高於28度可開冷氣
 #氣溫低於15度可開暖氣
-"""
+
 temp = float(input("請輸入室內溫度："))
 if temp >= 28:
     print("可開冷氣！")
@@ -612,7 +612,7 @@ num2 = [4,5]
 
 combination = [[n,m] for n in num1 for m in num2]
 print(combination)
-"""
+
 
 #<38>
 matrix = [[1,2,3],[4,5,6],[7,8,9]]
